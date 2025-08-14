@@ -1,17 +1,17 @@
-FROM centos:7
-LABEL maintainer="shikhardevops@gmail.com"
+FROM almalinux:8
+LABEL maintainer="basavab413@gmail.com"
 
-RUN yum install -y httpd zip unzip
+RUN dnf install -y httpd unzip zip && dnf clean all
 
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+# Add a working direct zip download (see below)
+ADD https://github.com/vaibhaw1908/files/raw/main/photogenic-master.zip /var/www/html/
 
 WORKDIR /var/www/html/
 
-RUN unzip photogenic.zip && \
-    cp -rvf photogenic/* . && \
-    rm -rf photogenic photogenic.zip
+RUN unzip photogenic-master.zip && \
+    cp -rvf photogenic-master/* . && \
+    rm -rf photogenic-master photogenic-master.zip
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
-EXPOSE 80
-
+EXPOSE 80 443
