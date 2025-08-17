@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata: 
+  name: webapp
+  labels:
+    app: webapp
+spec:
+  ports: 
+    - port: 8080
+      targetport: 80
+      nodeport: 31200
+  selector: 
+    app: webapp
+  type: LoadBalancer
+    
