@@ -15,6 +15,6 @@ spec:
       containers:
         - name: webapp
           image: basavab413/pipeline-demo
-          imagePullPolicy: always
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
