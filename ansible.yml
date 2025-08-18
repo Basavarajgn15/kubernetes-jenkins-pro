@@ -1,7 +1,8 @@
 - hosts: node
   become: true
   tasks: 
-    - name: create new deploymnet
+    - name: create new deployment
       command: kubectl apply -f /home/ubuntu/Deployment.yml
+
     - name: create new service 
-      command kubectl apply -f /home/ubuntu/Service.yml
+      command: kubectl apply -f /home/ubuntu/Service.yml
