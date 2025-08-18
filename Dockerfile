@@ -7,9 +7,9 @@ ADD https://www.free-css.com/assets/files/free-css-templates/dowmload/page285/vi
 
 WORKDIR /var/www/html/
 
-RUN unzip photogenic-master.zip && \
-    cp -rvf photogenic-master/* . && \
-    rm -rf photogenic-master photogenic-master.zip
+RUN unzip viking.zip && \
+    cp -rvf viking/* . && \
+    rm -rf viking viking.zip
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
