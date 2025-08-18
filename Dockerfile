@@ -3,8 +3,7 @@ LABEL maintainer="basavab413@gmail.com"
 
 RUN dnf install -y httpd unzip zip && dnf clean all
 
-# Add a working direct zip download (see below)
-ADD https://github.com/vaibhaw1908/files/raw/main/photogenic-master.zip /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/dowmload/page285/viking.zip /var/www/html/
 
 WORKDIR /var/www/html/
 
